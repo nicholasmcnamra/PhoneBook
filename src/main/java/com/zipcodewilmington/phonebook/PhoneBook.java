@@ -52,7 +52,13 @@ public class PhoneBook {
     }
 
     public String reverseLookup(String phoneNumber)  {
-        return ;
+        String key = "";
+        for (Map.Entry<String, List<String>> entry: phonebook.entrySet()) {
+            if(Objects.equals(entry.getValue(), phoneNumber)) {
+                key = entry.getKey();
+            }
+        }
+        return key;
     }
 
     public List<String> getAllContactNames() {
